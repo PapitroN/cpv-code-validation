@@ -1,0 +1,23 @@
+<div id="center">
+
+  <h2>{{ TITLE }}</h2>
+
+  <div id="search-bar">
+    <input type="text" id="myInput"  [(ngModel)]="searchText" placeholder="{{INSERT}}">
+    <button type="button" id="button" (click)="codeSearch(searchText)">{{ SEARCH }}</button>
+  </div>
+
+  <table id="myTable">
+    <tr class="header">
+      <th style="width:60%;">{{CODE}}</th>
+      <th style="width:40%;">{{DESCRIPTION}}</th>
+    </tr>
+    <tr>
+      <td>{{ code }}</td>
+      <td *ngIf="!noMatchesFound">{{ descriptionValue }}</td>
+      <td *ngIf="noMatchesFound">{{ NO_MATCHES }}</td>
+    </tr>
+  </table>
+
+</div>
+
